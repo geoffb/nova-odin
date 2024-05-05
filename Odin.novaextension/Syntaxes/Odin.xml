@@ -50,11 +50,11 @@
 	<collections>
 
 		<collection name="comments">
-			<scope name="flatbuffers.comment.single" spell-check="true">
+			<scope name="odin.comment.single" spell-check="true">
 				<expression>\/\/(.*)</expression>
 				<capture number="1" name="flatbuffers.comment.content" />
 			</scope>
-			<scope name="flatbuffers.comment.multiline" spell-check="true">
+			<scope name="odin.comment.multiline" spell-check="true">
 				<starts-with>
 					<expression>\/\*</expression>
 				</starts-with>
@@ -67,11 +67,28 @@
 		<collection name="constructs">
 			<scope name="odin.keyword">
 				<strings>
-					<string>package</string>
-					<string>import</string>
-					<string>for</string>
-					<string>proc</string>
 					<string>struct</string>
+					<string>proc</string>
+					<string>import</string>
+					<string>foreign</string>
+					<string>package</string>
+					<string>if</string>
+					<string>else</string>
+					<string>when</string>
+					<string>for</string>
+					<string>in</string>
+					<string>not_in</string>
+					<string>defer</string>
+					<string>switch</string>
+					<string>return</string>
+					<string>const</string>
+					<string>do</string>
+					<string>where</string>
+					<string>fallthrough</string>
+					<string>break</string>
+					<string>continue</string>
+					<string>case</string>
+					<string>distinct</string>
 				</strings>
 			</scope>
 		</collection>
@@ -79,8 +96,30 @@
 		<collection name="types">
 			<scope name="odin.keyword.type">
 				<strings>
-					<string>bool</string>
+					<!-- Integers -->
+					<string>i8</string>
+					<string>i16</string>
+					<string>i32</string>
+					<string>i64</string>
+					<string>i128</string>
 					<string>int</string>
+					<!-- Unsigned integers -->
+					<string>u8</string>
+					<string>u16</string>
+					<string>u32</string>
+					<string>u64</string>
+					<string>u128</string>
+					<string>uint</string>
+					<string>uintptr</string>
+					<!-- Floats -->
+					<string>f16</string>
+					<string>f32</string>
+					<string>f64</string>
+					<!-- Booleans -->
+					<string>bool</string>
+					<!-- Strings -->
+					<string>string</string>
+					<string>cstring</string>
 				</strings>
 			</scope>
 		</collection>
