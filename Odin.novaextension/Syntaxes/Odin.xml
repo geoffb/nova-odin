@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="odin">
+	<meta>
+		<name>Odin</name>
+		<type>compiled</type>
+		<preferred-file-extension>odin</preferred-file-extension>
+	</meta>
+
+	<detectors>
+		<extension priority="1.0">odin</extension>
+	</detectors>
+
+	<indentation>
+		<increase>
+			<expression>(\{[^}\"']*$)|(\[[^\]\"']*$)|(\([^)\"']*$)</expression>
+		</increase>
+		<decrease>
+			<expression>^\s*(\s*/\*.*\*/\s*)*[\}\]\)\\]</expression>
+		</decrease>
+	</indentation>
+
+	<comments>
+		<single>
+			<expression>//</expression>
+		</single>
+		<multiline>
+			<starts-with>
+				<expression>/*</expression>
+			</starts-with>
+			<ends-with>
+				<expression>*/</expression>
+			</ends-with>
+		</multiline>
+	</comments>
+
+	<brackets>
+		<pair open="{" close="}" />
+		<pair open="[" close="]" />
+		<pair open="(" close=")" />
+		<!-- <pair open="&lt;" close="&gt;" /> -->
+	</brackets>
+
+	<scopes>
+		<include syntax="self" collection="comments" />
+		<include syntax="self" collection="keywords" />
+		<include syntax="self" collection="constructs" />
+		<include syntax="self" collection="types" />
+	</scopes>
+
+	<collections>
+
+		<collection name="comments">
+			<scope name="flatbuffers.comment.single" spell-check="true">
+				<expression>\/\/(.*)</expression>
+				<capture number="1" name="flatbuffers.comment.content" />
+			</scope>
+			<scope name="flatbuffers.comment.multiline" spell-check="true">
+				<starts-with>
+					<expression>\/\*</expression>
+				</starts-with>
+				<ends-with>
+					<expression>\*\/</expression>
+				</ends-with>
+			</scope>
+		</collection>
+
+		<collection name="constructs">
+			<scope name="odin.keyword">
+				<strings>
+					<string>package</string>
+					<string>import</string>
+					<string>for</string>
+					<string>proc</string>
+					<string>struct</string>
+				</strings>
+			</scope>
+		</collection>
+
+		<collection name="types">
+			<scope name="odin.keyword.type">
+				<strings>
+					<string>bool</string>
+					<string>int</string>
+				</strings>
+			</scope>
+		</collection>
+	</collections>
+
+</syntax>

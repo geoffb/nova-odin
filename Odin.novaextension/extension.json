@@ -1,0 +1,10 @@
+{
+	"identifier": "com.geoffblair.nova-odin",
+	"name": "Odin",
+	"organization": "Geoff Blair",
+	"description": "Syntax highlighting for Odin",
+	"version": "0.1.0",
+	"categories": ["languages"],
+	"repository": "https://github.com/geoffb/nova-odin",
+	"bugs": "https://github.com/geoffb/nova-odin/issues"
+}
